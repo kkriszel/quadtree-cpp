@@ -1,0 +1,39 @@
+--------------------------------------
+Fordítás Windows rendszeren
+--------------------------------------
+
+1. msys2 környezet (könyvtárak, mingw64 fordító, stb.) telepítése a https://www.msys2.org/ oldalról, az ott leírt utasítások alapján.
+2. mingw64/bin megadása a %PATH%-ben
+3. fordítás a compile.bat scripttel
+
+--------------------------------------
+Fordítás Linux deb alapú rendszeren
+--------------------------------------
+
+1. fordítás a megadott makefile segítségével (make parancs)
+2. esetleges szükséges könyvtárak:
+	- X11/Xlib.h: 	# sudo apt-get install libx11-dev
+	- for GL/glx.h: # sudo apt-get install mesa-common-dev
+	- png.h: 	# sudo apt-get install libpng-dev
+
+--------------------------------------
+Használat
+--------------------------------------
+
+Fordítás után létrejön egy main/main.exe futtatható állomány.
+
+A programot command line-ból futtathatjuk paraméterekkel. A paraméterek sorrendje:
+- nrItems - hány objektum legyen a képernyőn
+- screenWidth - ablak szélessége pixelekben
+- screenHeight - ablak magassága pixelekben
+- minSize - objektumok minimális szélessége/magassága
+- maxSize - objektumok maximális szélessége/magassága
+
+Futtassuk a programot többféle paraméterrel. Pl.:
+- 100 800 800 10 20
+- 1000 800 800 1 1
+- 50 800 800 20 60
+- 1000000 800 800 1 1
+
+A programon belül "H" billenyűvel érhetjük el a segítséget a műveleteket illetően.
+
